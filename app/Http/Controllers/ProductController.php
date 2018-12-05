@@ -4,6 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Product;
+use Session;
+use App\Category;
+use App\Sub_Category;
+use App\Genre;
+use Image;
+use Storage;
+
 class ProductController extends Controller
 {
     /**
@@ -11,9 +19,17 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
-        //
+        $products = Product::orderBy('id', 'desc')->paginate(10);
+       //return a view and pass in the above variable
+       return view('products.index')->withProducts($products);
     }
 
     /**
