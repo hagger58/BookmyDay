@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use Session;
 use App\Category;
+use App\Author;
 use App\Sub_Category;
 use App\Genre;
 use Image;
@@ -28,8 +29,9 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::orderBy('id', 'desc')->paginate(10);
+        $authors = Author::orderby('id', 'desc')->paginate(10);
        //return a view and pass in the above variable
-       return view('products.index')->withProducts($products);
+       return view('products.index')->withProducts($products)->withAuthors($authors);
     }
 
     /**
@@ -39,7 +41,11 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        $subcategories = Sub_Category::all();
+        $genres = Genre::all();
+
+        return view('products.create')->withCategories($categories)->withSubcategories($subcategories)->withGenres($genres);
     }
 
     /**
@@ -50,7 +56,29 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validation
+        $this->validate($request, array(
+            'title' => 'required|max:255',
+            'ISBN' => 'required|max:20|min:10|unique:products',
+            'category_id' => 'required|integer',
+            'subcategory_id' => 'required|integer',
+            'abstract' => 'required|min:20'
+        ));
+        //store in the database
+        
+        $product = new Product;
+
+        $product->title = $request->title;
+        $product->ISBN = $request->ISBN;
+        $product->category_id = $request->category_id;
+        $product->subcategory_id = $request->subcategory_id;
+        $product->abstract = $request->abstract;
+        
+        $product->save();
+
+        $product->genres()->sync($request->genres, false);
+
+        return redirect()->route('products.show', $product->id);
     }
 
     /**

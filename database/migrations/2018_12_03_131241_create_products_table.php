@@ -18,6 +18,9 @@ class CreateProductsTable extends Migration
             $table->string('title');
             $table->string('ISBN');
             $table->text('abstract');
+            $table->integer('category_id')->unsigned();
+            $table->integer('subcategory_id')->unsigned();
+            $table->integer('publisher_id')->nullable()->unsigned();
             $table->timestamps();
         });
        

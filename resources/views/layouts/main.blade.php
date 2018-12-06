@@ -12,7 +12,7 @@
     {{--  to make the carousel work  --}}
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+    
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -23,6 +23,7 @@
     {{--  to make the carousel work  --}}
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link href="css/carousel.css">
+    @yield('stylesheets')
 
 </head>
 <body>
@@ -79,10 +80,12 @@
         </nav>
 
         <main class="py-4">
-            @yield('content')
+            
         </main>
     </div>
-
-
+    <div class="container">
+    @yield('content')
+    </div>
+@yield('scripts')
 </body>
 </html>

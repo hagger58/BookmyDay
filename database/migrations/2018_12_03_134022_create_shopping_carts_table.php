@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProductAuthorTable extends Migration
+class CreateShoppingCartsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,12 @@ class CreateProductAuthorTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_author', function (Blueprint $table) {
+        Schema::create('shopping_carts', function (Blueprint $table) {
             $table->increments('id');
-
-            $table->integer('product_id')->unsigned();
-            $table->foreign('product_id')->references('id')->on('products');
-
-            $table->integer('author_id')->unsigned();
-            $table->foreign('author_id')->references('id')->on('authors');
-
+            $table->date('order_date');
+            $table->integer('user_id');
+            $table->integer('product_id');
+            $table->integer('session_id');
             $table->timestamps();
         });
     }
@@ -33,6 +30,6 @@ class CreateProductAuthorTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_author');
+        Schema::dropIfExists('shopping_carts');
     }
 }

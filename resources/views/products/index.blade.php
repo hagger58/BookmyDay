@@ -1,4 +1,4 @@
-@extends('main')
+@extends('layouts.main')
 
 @section('content')
     <div class="row">
@@ -18,8 +18,10 @@
                 <thead>
                     <th>#</th>
                     <th>Title</th>
-                    <th>Body</th>
+                    <th>Author</th>
+                    <th>Abstract</th>
                     <th>Created at</th>
+                    <th>ISBN</th>
                     <th></th>
                 </thead>
                 <tbody>
@@ -27,12 +29,22 @@
                         <tr>
                             <th>{{ $product->id }}
                             <td>{{ $product->title }}</td>
+                            <td>author</td>
                             <td>{{ substr($product->abstract, 0, 50) }}{{ strlen($product->abstract) > 50 ? "..." : "" }}</td>
                             <td>{{ date('M j, Y H:i', strtotime($product->created_at)) }}</td>
+                            <td>ISBN</td>
                             <td><a href="{{ route('products.show', $product->id) }}" class="btn btn-default">View</a><a href="{{ route('products.edit', $product->id) }}" class="btn btn-default">Edit</a></td>
                         </tr>
-                    @endforeach
+                       
+                        @endforeach
+                    
+
             </table>
+            @foreach ($authors as $author)
+            {{ $author->name }}
+            @endforeach
+
+            
             <div class="text-center">{!! $products->links(); !!}</div>
         </div>
     </div>

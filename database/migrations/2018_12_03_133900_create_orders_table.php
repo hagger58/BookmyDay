@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProductBooktypeTable extends Migration
+class CreateOrdersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,16 @@ class CreateProductBooktypeTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_booktype', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
-
+            $table->date('order_date');
+            $table->integer('days_delivery_time');
             $table->integer('product_id')->unsigned();
-            $table->foreign('product_id')->references('id')->on('products');
-
-            $table->integer('booktype_id')->unsigned();
-            $table->foreign('booktype_id')->references('id')->on('booktypes');
-
+            $table->integer('user_id');
             $table->timestamps();
+        });
+        Schema::table('orders', function ($table) {
+            $table->foreign('product_id')->references('id')->on('products');
         });
     }
 
@@ -33,6 +33,6 @@ class CreateProductBooktypeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_booktype');
+        Schema::dropIfExists('orders');
     }
 }

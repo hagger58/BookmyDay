@@ -11,20 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('Home');
-});
 
-Route::get('/about', function () {
-    return view('About');
-});
+Route::get('/', 'PageController@getIndex');
 
-Route::get('/contact', function () {
-    return view('Contact');
-});
+Route::get('about', 'PageController@getAbout');
+
+Route::get('contact', 'PageController@getContact');
 
 Route::resource('products', 'ProductController');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
