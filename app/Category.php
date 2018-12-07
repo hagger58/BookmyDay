@@ -12,7 +12,7 @@ class Category extends Model
     {
         return $this->hasMany('App\Product');
     }
-    public function sub_categories()
+    public function subcategories()
     {
         return $this->hasMany('App\Sub_Category');
     }

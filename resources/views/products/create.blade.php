@@ -1,10 +1,5 @@
 @extends('layouts.main')
 
-@section('stylesheets')
-    {!! Html::style('css/parsley.css')!!}
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-@endsection
-
 @section('content')
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -15,7 +10,7 @@
                 {{ Form::text('title', null, array('class' => 'form-control', 'required' => '', 'minlength' => '3', 'maxlength' => '100')) }}
                 
                 {{ Form::label('ISBN', 'ISBN:') }}
-                {{ Form::text('slug', null, ['class' => 'form-control', 'required' => '', 'minlength' => '10', 'maxlength' => '20']) }}
+                {{ Form::text('ISBN', null, ['class' => 'form-control', 'required' => '', 'minlength' => '10', 'maxlength' => '20']) }}
                
                 {{ Form::label('category_id', 'Category:') }}
                 <select class="form-control" name="category_id">
@@ -38,6 +33,13 @@
                     @endforeach
                 </select>
 
+                <!-- {{ Form::label('genre_id', 'Genre:') }}
+                <select class="form-control" name="genre_id">
+                    @foreach($genres as $genre)
+                    <option value="{{ $genre->id }}">{{ $genre->name }}</option>
+                    @endforeach
+                </select> -->
+                
                 
                 {{ Form::label('abstract', 'Abstract:', ['class' => 'form-spacing-top']) }}
                 {{ Form::textarea('abstract', null, array('class' => 'form-control', 'required' => '', 'minlength' => '3')) }}
@@ -48,11 +50,8 @@
     </div>
 @endsection
 
-@section('scripts')
-    {!! Html::script('js/parsley.min.js') !!}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-    <script>$(document).ready(function() {$('.select2-multi').select2(); });</script>
-@endsection
+
+
 
 
 
