@@ -2,19 +2,53 @@
 
 @section('content')
 <div class="row">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8">
     <img src="{{ asset('images/' . $product->image) }}" height="400" width="100%" alt="Image not working."/>
+        <div>
+            <br>
+        </div>
         <h1>{{ $product->title }}</h1>
         <p>{{ $product->abstract }}</p>
-        <hr>
-        <p>{{ $product->category->name }}</p>
+        <br>
+        <br>
+    </div>
+    <div class="col-md-4">
+        <div class="well">
+            <hr>
+            <dl class="dl-horizontal">
+                <label><strong>ISBN</strong></label><br>
+                    {{ $product->ISBN }}
+            </dl>
+            <dl class="dl-horizontal">
+                <label><strong>Category</strong></label>
+                <p>{{ $product->category->name }}</p>
+            </dl>
+            <dl class="dl-horizontal">
+                <label><strong>Sub-Category</strong></label>
+                <p>{{ $product->subcategory->name }}</p>
+            </dl>
+            <dl class="dl-horizontal">
+                <label><strong>Genres</strong></label><br>
+                @foreach ($product->genres as $genre)
+                    {{ $genre->name }}
+                @endforeach
+            </dl>
+            <dl class="dl-horizontal">
+                <label><strong>Authors</strong></label><br>
+                @foreach ($product->authors as $author)
+                    {{ $author->name }}
+                @endforeach
+            </dl>
+            <dl class="dl-horizontal">
+                <label><strong>Booktypes</strong></label><br>
+                @foreach ($product->booktypes as $booktype)
+                    {{ $booktype->name }}
+                @endforeach
+            </dl>
+            <hr>
+        </div>
     </div>
 </div>
-
-
-
-
-
 
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
