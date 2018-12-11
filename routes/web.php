@@ -21,7 +21,17 @@ Route::post('contact', 'PageController@postContact');
 
 Route::resource('products', 'ProductController');
 
-Route::resource('reviews', 'ReviewController');
+// Route::resource('reviews', 'ReviewController');
+
+Route::post('reviews/{product_id}', ['uses' => 'ReviewController@store', 'as' => 'reviews.store']);
+Route::get('reviews/{id}/edit', ['uses' => 'ReviewController@edit', 'as' => 'reviews.edit']);
+Route::put('reviews/{id}', ['uses' => 'ReviewController@update', 'as' => 'reviews.update']);
+Route::delete('reviews/{id}', ['uses' => 'ReviewController@destroy', 'as' => 'reviews.destroy']);
+Route::get('reviews/{id}/delete', ['uses' => 'ReviewController@delete', 'as' => 'reviews.delete']);
+
+Route::get('book', 'BookController@getIndex');
+
+Route::get('book/{id}', ['as' => 'book.single', 'uses' => 'BookController@getSingle']);
 
 Route::get('/product', function () {
     return view('pages.product');

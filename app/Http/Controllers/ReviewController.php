@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Review;
+use App\Product;
+use Session;
 
 class ReviewController extends Controller
 {
@@ -14,7 +17,7 @@ class ReviewController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth', ['except' => 'store']);
+        $this->middleware('auth');
     }
 
     public function index()
@@ -44,23 +47,26 @@ class ReviewController extends Controller
             'title' => 'required|max:100',
             'name'=>'required|max:255',
             'email'=>'required|max:255',
-            'reply' => 'required|min:5|max:255',
+            'rating' => 'required|integer',
             'review'=>'required|max:2000'
         ));
-        $review = Review::find($review_id);
 
-        $review = new review();
+        $product = Product::find($product_id);
+
+        $review = new Review();
+
+        $review->title = $request->title;
         $review->name = $request->name;
         $review->email = $request->email;
-        $review->reply = $request->reply;
+        $review->rating = $request->rating;
         $review->review = $request->review;
-        $review->review()->associate($review);
+        $review->product()->associate($product);
 
         $review->save();
 
-        Session::flash('success', 'review was successfully submitted!');
+        Session::flash('success', 'Review was successfully submitted!');
 
-        return redirect()->route('blog.single', [$review->id]);
+        return redirect()->route('book.single', [$product->id]);
     }
 
     /**
@@ -82,7 +88,8 @@ class ReviewController extends Controller
      */
     public function edit($id)
     {
-        //
+        $review = Review::find($id);
+        return view('reviews.edit')->withReview($review);
     }
 
     /**
