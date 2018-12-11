@@ -21,6 +21,8 @@ Route::post('contact', 'PageController@postContact');
 
 Route::resource('products', 'ProductController');
 
+Route::resource('reviews', 'ReviewController');
+
 Route::get('/product', function () {
     return view('pages.product');
 });

@@ -25,8 +25,17 @@ class Product extends Model
     {
         return $this->belongsTo('App\Category');
     }
+
+    public function subcategory()
+    {
+        return $this->belongsTo('App\Sub_Category');
+    }
     public function publisher()
     {
         return $this->belongsTo('App\Publisher');
+    }
+    public function reviews()
+    {
+        return $this->hasMany('App\Review');
     }
 }

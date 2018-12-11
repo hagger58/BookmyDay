@@ -11,6 +11,12 @@ class ReviewController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => 'store']);
+    }
+
     public function index()
     {
         //
@@ -32,9 +38,29 @@ class ReviewController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $product_id)
     {
-        //
+        $this->validate($request, array(
+            'title' => 'required|max:100',
+            'name'=>'required|max:255',
+            'email'=>'required|max:255',
+            'reply' => 'required|min:5|max:255',
+            'review'=>'required|max:2000'
+        ));
+        $review = Review::find($review_id);
+
+        $review = new review();
+        $review->name = $request->name;
+        $review->email = $request->email;
+        $review->reply = $request->reply;
+        $review->review = $request->review;
+        $review->review()->associate($review);
+
+        $review->save();
+
+        Session::flash('success', 'review was successfully submitted!');
+
+        return redirect()->route('blog.single', [$review->id]);
     }
 
     /**

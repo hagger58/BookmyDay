@@ -1,12 +1,14 @@
 @extends('layouts.main')
 
+@section('title', '| Products')
+
 @section('content')
     <div class="row">
         <div class="col-md-10">
             <h1>All Products</h1>
         </div>
         <div class="col-md-2">
-            <a href="{{ route('products.create') }}" class="btn btn-lg btn-block btn-primary">Add New Product</a>
+            <a href="{{ route('products.create') }}" class="btn btn-lg btn-block btn-primary">Add Product</a>
         </div>
         <div class="col-md-12">
             <hr>
@@ -18,8 +20,9 @@
                 <thead>
                     <th>#</th>
                     <th>Title</th>
+                    <th>Genre</th>
                     <th>Author</th>
-                    <th>Abstract</th>
+                    <th>Booktype</th>
                     <th>Created at</th>
                     <th>ISBN</th>
                     <th></th>
@@ -29,20 +32,22 @@
                         <tr>
                             <th>{{ $product->id }}
                             <td>{{ $product->title }}</td>
-                            <td>author</td>
-                            <td>{{ substr($product->abstract, 0, 50) }}{{ strlen($product->abstract) > 50 ? "..." : "" }}</td>
+                            <td>@foreach ($product->genres as $genre)
+                                {{ $genre->name }}
+                                @endforeach</td>
+                            <td>@foreach ($product->authors as $author)
+                                {{ $author->name }}
+                                @endforeach</td>
+                            <td>@foreach ($product->booktypes as $booktype)
+                                {{ $booktype->name }}
+                                @endforeach</td>
                             <td>{{ date('M j, Y H:i', strtotime($product->created_at)) }}</td>
-                            <td>ISBN</td>
+                            <td>{{ $product->ISBN }}</td>
                             <td><a href="{{ route('products.show', $product->id) }}" class="btn btn-default">View</a><a href="{{ route('products.edit', $product->id) }}" class="btn btn-default">Edit</a></td>
                         </tr>
-                       
+             
                         @endforeach
-                    
-
             </table>
-            @foreach ($authors as $author)
-            {{ $author->name }}
-            @endforeach
 
             
             <div class="text-center">{!! $products->links(); !!}</div>

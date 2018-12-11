@@ -19,8 +19,8 @@ class CreateReviewsTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->integer('product_id')->unsigned();
-            $table->integer('aantal_sterren');
-            $table->text('review_body');
+            $table->integer('rating');
+            $table->text('review');
             $table->timestamps();
         });
 

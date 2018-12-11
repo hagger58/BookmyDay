@@ -25,5 +25,5 @@
     {{--  to make the carousel work  --}}
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     
-    
+    <title>Book My Day @yield('title')</title>
     @yield('stylesheets')

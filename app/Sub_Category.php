@@ -12,4 +12,9 @@ class Sub_Category extends Model
     {
         return $this->belongsTo('App\Category');
     }
+
+    public function products()
+    {
+        return $this->hasMany('App\Product');
+    }
 }

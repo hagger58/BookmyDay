@@ -1,11 +1,13 @@
 @extends('layouts.main')
 
+@section('title', '| Create Product')
+
 @section('content')
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <h1>Create New Product</h1>
             <hr>
-            {!! Form::open(array('route' => 'products.store', 'data-parsley-validate' => '')) !!}
+            {!! Form::open(array('route' => 'products.store', 'data-parsley-validate' => '', 'files' => true)) !!}
                 {{ Form::label('title', 'Title:', ['class' => 'form-spacing-top']) }}
                 {{ Form::text('title', null, array('class' => 'form-control', 'required' => '', 'minlength' => '3', 'maxlength' => '100')) }}
                 
@@ -33,17 +35,26 @@
                     @endforeach
                 </select>
 
-                <!-- {{ Form::label('genre_id', 'Genre:') }}
-                <select class="form-control" name="genre_id">
-                    @foreach($genres as $genre)
-                    <option value="{{ $genre->id }}">{{ $genre->name }}</option>
+                {{ Form::label('authors', 'Author:') }}
+                <select class="form-control select2-multi" name="authors[]" multiple="multiple">
+                    @foreach($authors as $author)
+                    <option value="{{ $author->id }}">{{ $author->name }}</option>
                     @endforeach
-                </select> -->
-                
+                </select>
+
+                {{ Form::label('booktypes', 'Booktype:') }}
+                <select class="form-control select2-multi" name="booktypes[]" multiple="multiple">
+                    @foreach($booktypes as $booktype)
+                    <option value="{{ $booktype->id }}">{{ $booktype->name }}</option>
+                    @endforeach
+                </select>                          
                 
                 {{ Form::label('abstract', 'Abstract:', ['class' => 'form-spacing-top']) }}
                 {{ Form::textarea('abstract', null, array('class' => 'form-control', 'required' => '', 'minlength' => '3')) }}
                 
+                {{ Form::label('featured_image', 'Upload Featured Image') }}
+                {{ Form::file ('featured_image') }}
+
                 {{ Form::submit('Create Product', array('class' => 'btn btn-success btn-lg btn-block')) }}
             {!! Form::close() !!}
         </div>

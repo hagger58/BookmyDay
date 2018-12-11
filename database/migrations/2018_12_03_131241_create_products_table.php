@@ -17,6 +17,7 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('ISBN');
+            $table->string('image')->nullable();
             $table->text('abstract');
             $table->integer('category_id')->unsigned();
             $table->integer('subcategory_id')->unsigned();
