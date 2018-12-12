@@ -16,6 +16,9 @@ use Notification;
 use App\Sub_Category;
 use App\Category;
 
+use App\Sub_Category;
+use App\Category;
+
 class PageController extends Controller
 {
     public function getIndex()
