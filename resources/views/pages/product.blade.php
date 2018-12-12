@@ -1,5 +1,7 @@
 @extends('layouts.main')
 
+@section('title', '| Productpage')
+
 @section('content')
 
 <div class="row">

@@ -4,11 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Sub_Category;
+use App\Category;
+
 class PageController extends Controller
 {
     public function getIndex()
     {
-        return view('pages.home');
+        $categories = Category::all();
+        $subcategories = Sub_Category::all();
+        return view('pages.home')->withSubcategories($subcategories)->withCategories($categories);
     }
     public function getAbout()
     {
