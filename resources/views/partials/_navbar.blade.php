@@ -77,13 +77,12 @@
             Fictie
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Nederlandse literatuur & romans</a>
-            <a class="dropdown-item" href="#">Literatuur & Romans</a>
-            <a class="dropdown-item" href="#">Thrillers & Spanning</a>
-            <a class="dropdown-item" href="#">Young Adult</a>
-            <a class="dropdown-item" href="#">Fantasy & Science Fiction</a>
-            <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="/fictie">Toon alle Fictie</a>
+            @foreach($subcategories as $subcategory)
+                <a class="dropdown-item" href="#">{{ $subcategory->name }}</a>
+           @endforeach
+
+           
+
           </div>
         </li>
         <li class="nav-item dropdown">
