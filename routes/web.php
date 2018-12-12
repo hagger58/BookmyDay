@@ -41,7 +41,11 @@ Route::get('/checkout', function () {
     return view('pages.checkout');
 });
 
+<<<<<<< HEAD
 //categorieen
+=======
+//categorieen 
+>>>>>>> 0ef2780610501e4d9e0add2b18d79fa48ff3dc7d
 Route::get('/fictie', function () {
     return view('categorieen.fictie');
 });
@@ -83,6 +87,7 @@ Route::get('/top100', function () {
     return view('categorieen.top100');
 });
 
+<<<<<<< HEAD
 //winkelmandje controller
 Route::get('/cart', function () {
     return  view('pages.Cart');
@@ -93,4 +98,6 @@ Route::get('/add-to-cart/{id}', [
 'as' => 'product.addToCart']
 );
 
+=======
+>>>>>>> 0ef2780610501e4d9e0add2b18d79fa48ff3dc7d
 Auth::routes();

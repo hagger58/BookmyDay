@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use App\Http\Requests;
 use App\Post;
 use Mail;
@@ -12,11 +13,16 @@ use App\Mail\sendmail;
 use App\Http\Controllers\Controller;
 use Illuminate\Mail\Mailer;
 use Notification;
+=======
+>>>>>>> 0ef2780610501e4d9e0add2b18d79fa48ff3dc7d
 
 use App\Sub_Category;
 use App\Category;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0ef2780610501e4d9e0add2b18d79fa48ff3dc7d
 class PageController extends Controller
 {
     public function getIndex()
@@ -51,15 +57,28 @@ class PageController extends Controller
 
         Mail::send('emails.contact', $data, function($message) use ($data)
     {
+<<<<<<< HEAD
         $message->from($data['email']);
+=======
+        $message->form($data['email']);
+>>>>>>> 0ef2780610501e4d9e0add2b18d79fa48ff3dc7d
         $message->to('hagger58@gmail.com');
         $message->subject($data['subject']);
     });
 
+<<<<<<< HEAD
     // Session::first('succes', 'je email is verzonden');
 
     // return redirect()->url('/');
 
     }
 
+=======
+    Session::first('succes', 'je email is verzonden');
+
+    return redirect()->url('/');
+
+    }
+    
+>>>>>>> 0ef2780610501e4d9e0add2b18d79fa48ff3dc7d
 }
