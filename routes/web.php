@@ -83,4 +83,14 @@ Route::get('/top100', function () {
     return view('categorieen.top100');
 });
 
+//winkelmandje controller
+// Route::get('/cart', function () {
+//     return  view('pages.Cart');
+// });
+
+// Route::get('/add-to-cart/{id}', [
+// 'uses' => 'ProductController@getAddToCart',
+// 'as' => 'product.addToCart']
+// );
+
 Auth::routes();
