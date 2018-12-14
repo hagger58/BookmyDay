@@ -11,9 +11,9 @@
                             <p>De Online Boekenshop van Nederland</p>
                                     <div id="ftrLinks" class="clearfix"> 
                                              <ul>
-                                                <li><a href="#"><i class="fa fa-play magenta">&nbsp;&nbsp;</i>About Us</a></li>
+                                                <li><a href="{{ route('pages.about') }}"><i class="fa fa-play magenta">&nbsp;&nbsp;</i>About Us</a></li>
                                                 <li><a href="#"><i class="fa fa-play magenta">&nbsp;&nbsp;</i>Adress</a></li>
-                                                <li><a href="#"><i class="fa fa-play magenta">&nbsp;&nbsp;</i>Contact</a></li>
+                                                <li><a href="{{ route('pages.contact') }}"><i class="fa fa-play magenta">&nbsp;&nbsp;</i>Contact</a></li>
                                                 <li><a href="#"><i class="fa fa-play magenta">&nbsp;&nbsp;</i>Privacy Policy</a></li>
                                                 <li><a href="#"><i class="fa fa-play magenta">&nbsp;&nbsp;</i>Disclaimer</a></li>
                                                 <li><a href="#"><i class="fa fa-play magenta">&nbsp;&nbsp;</i>Sitemap</a></li>

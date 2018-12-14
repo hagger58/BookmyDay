@@ -12,7 +12,7 @@
             <div class="col-md-8">
                 <h2>{{ $product->title }}</h2>
                 <br>
-                <img src="{{ asset('images/' . $product->image) }}" height="400" width="100%" alt="Image not working."/>
+                <img src="{{ asset('images/' . $product->image) }}" height="480" width="300" alt="Image not working."/>
             </div>
             <br>
             <div class="col-md-4">

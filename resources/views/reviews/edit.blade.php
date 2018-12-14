@@ -1,4 +1,4 @@
-@extends('main')
+@extends('layouts.main')
 
 @section('title', '| Edit Review')
 
@@ -9,20 +9,23 @@
 
         {{ Form::model($review, ['route' => ['reviews.update', $review->id], 'method' => 'PUT']) }}
             {{ Form::label('title', 'Title:') }}
-            {{ Form::text('title', null, ['class' => 'form-control', 'disabled' => '']) }}
+            {{ Form::text('title', null, ['class' => 'form-control']) }}
 
             {{ Form::label('name', 'Name:') }}
-            {{ Form::text('name', null, ['class' => 'form-control', 'disabled' => '']) }}
+            {{ Form::text('name', null, ['class' => 'form-control']) }}
 
             {{ Form::label('email', 'Email:') }}
-            {{ Form::text('email', null, ['class' => 'form-control', 'disabled' => '']) }}
+            {{ Form::text('email', null, ['class' => 'form-control']) }}
 
-            {{ Form::label('aantal_sterren', 'aantal_sterren:') }}
-                <select class="form-control select2-multi" name="aantal_sterrens[]" multiple="multiple">
-                    @foreach($aantal_sterrens as $aantal_sterren)
-                    <option value="{{ $aantal_sterren->id }}">{{ $aantal_sterren->name }}</option>
-                    @endforeach
-                </select>
+            {{ Form::label('rating', 'Rating:') }}
+                <select class="form-control" name="rating">
+                    <option value="{{ $review->rating }}">{{ $review->rating }}</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select> 
 
             {{ Form::label('review', 'Review:') }}
             {{ Form::textarea('review', null, ['class' => 'form-control']) }}

@@ -14,9 +14,9 @@
 
 Route::get('/', 'PageController@getIndex');
 
-Route::get('about', 'PageController@getAbout');
+Route::get('about', ['uses' => 'PageController@getAbout', 'as' => 'pages.about']);
 
-Route::get('contact', 'PageController@getContact');
+Route::get('contact', ['uses' => 'PageController@getContact', 'as' => 'pages.contact']);
 Route::post('contact', 'PageController@postContact');
 
 Route::resource('products', 'ProductController');

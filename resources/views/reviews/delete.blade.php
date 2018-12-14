@@ -1,19 +1,23 @@
-@extends('main')
+@extends('layouts.main')
 
-@section('title', '|DELETE COMMENT?')
+@section('title', '|Delete Review?')
 
 @section('content')
 
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
-        <h1>DELETE THIS COMMENT?</h1>
+    <br>
+    <br>
+        <h5>Delete this Review?</h5>
         <p>
-            <strong>Name:</strong> {{ $comment->name }}<br>
-            <strong>Email:</strong> {{ $comment->email }}<br>
-            <strong>Comment:</strong> {{ $comment->comment }}
+            <strong>Title:</strong> {{ $review->title }}<br>
+            <strong>Name:</strong> {{ $review->name }}<br>
+            <strong>Email:</strong> {{ $review->email }}<br>
+            <strong>Rating:</strong> {{ $review->rating }}<br>
+            <strong>Review:</strong> {{ $review->review }}
 </p>
-{{ Form::open(['route' => ['comments.destroy', $comment->id], 'method' => 'DELETE']) }}
-    {{ Form::submit('YES DELETE THIS COMMENT', ['class' => 'btn btn-lg btn-block btn-danger']) }}
+{{ Form::open(['route' => ['reviews.destroy', $review->id], 'method' => 'DELETE']) }}
+    {{ Form::submit('Yes, Delete this review', ['class' => 'btn btn-lg btn-block btn-danger']) }}
 {{ Form::close() }}
 <hr>
 <a href="{{ url()->previous() }}" class="btn btn-default btn-block">Cancel</a>

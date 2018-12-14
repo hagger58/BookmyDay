@@ -74,97 +74,144 @@
       </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Fictie
+            @if (count($categories1) > 0)
+                @foreach($categories1 as $category1)
+                {{ $category1->name }}
+                @endforeach
+            @else
+                Kinderboeken
+            @endif
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            @foreach($subcategories as $subcategory)
-                <a class="dropdown-item" href="#">{{ $subcategory->name }}</a>
-           @endforeach
+            @foreach($subcategories1 as $subcategory1)
+                <a class="dropdown-item" href="#">{{ $subcategory1->name }}</a>
+            @endforeach
 
-           
+           <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Show all in @foreach($categories1 as $category1)
+            {{ $category1->name }}
+            @endforeach</a>
 
           </div>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Hobby
+          @if (count($categories2) > 0)
+                @foreach($categories2 as $category2)
+                {{ $category2->name }}
+                @endforeach
+            @else
+                kookboeken
+            @endif
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Kookboeken</a>
-            <a class="dropdown-item" href="#">Reizen & Vakantie</a>
-            <a class="dropdown-item" href="#">Kunst & Cultuur</a>
-            <a class="dropdown-item" href="#">Sportboeken</a>
-            <a class="dropdown-item" href="#">Creatieve Hobby's</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="/hobby">Toon alle Hobby</a>
+          @foreach($subcategories2 as $subcategory2)
+                <a class="dropdown-item" href="#">{{ $subcategory2->name }}</a>
+           @endforeach
+           <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Show all in @foreach($categories2 as $category2)
+            {{ $category2->name }}
+            @endforeach</a>
           </div>
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Informatief
+            @if (count($categories3) > 0)
+                @foreach($categories3 as $category3)
+                {{ $category3->name }}
+                @endforeach
+            @else
+                Sportboeken
+            @endif
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Studieboeken</a>
-              <a class="dropdown-item" href="#">Computer & Internet</a>
-              <a class="dropdown-item" href="#">Taal</a>
-              <a class="dropdown-item" href="#">Business & Communicatie</a>
-              <a class="dropdown-item" href="#">Geschiedenis</a>
+            @foreach($subcategories3 as $subcategory3)
+                <a class="dropdown-item" href="#">{{ $subcategory3->name }}</a>
+           @endforeach
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="/informatief">Toon alle Informatief</a>
+              <a class="dropdown-item" href="#">Show all in @foreach($categories3 as $category3)
+            {{ $category3->name }}
+            @endforeach</a>
             </div>
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Ebooks
+            @if (count($categories4) > 0)
+                @foreach($categories4 as $category4)
+                {{ $category4->name }}
+                @endforeach
+            @else
+                Fictie
+            @endif
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">eBook Top 10</a>
-              <a class="dropdown-item" href="#">eTopper van de week</a>
-              <a class="dropdown-item" href="#">Thrillers & Spanning</a>
-              <a class="dropdown-item" href="#">Literatuur & Romans</a>
-              <a class="dropdown-item" href="#">Toon alle eBooks</a>
+            @foreach($subcategories4 as $subcategory4)
+                <a class="dropdown-item" href="#">{{ $subcategory4->name }}</a>
+           @endforeach
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="/ebooks">Toon alle eBooks</a>
+              <a class="dropdown-item" href="#">Show all in @foreach($categories4 as $category4)
+            {{ $category4->name }}
+            @endforeach</a>
             </div>
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Kinderboeken
+            @if (count($categories5) > 0)
+                @foreach($categories5 as $category5)
+                {{ $category5->name }}
+                @endforeach
+            @else
+                Ebooks
+            @endif
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Kinderboeken van de maand</a>
-                <a class="dropdown-item" href="#">Prentenboeken</a>
-                <a class="dropdown-item" href="#">Kinder Luisterboeken</a>
-                <a class="dropdown-item" href="#">Informatieve boeken</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/kinderboeken">Toon alle kinderboeken</a>
+            @foreach($subcategories5 as $subcategory5)
+                <a class="dropdown-item" href="#">{{ $subcategory5->name }}</a>
+           @endforeach
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Show all in @foreach($categories5 as $category5)
+            {{ $category5->name }}
+            @endforeach</a>
             </div>
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Actualiteit
+            @if (count($categories6) > 0)
+                @foreach($categories6 as $category6)
+                {{ $category6->name }}
+                @endforeach
+            @else
+                kookboeken
+            @endif
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Nieuwe boeken</a>
-                <a class="dropdown-item" href="#">Te reserveren titels</a>
-                <a class="dropdown-item" href="#">Top 100 gratis verzonden</a>
-                <a class="dropdown-item" href="#">Boeken van vloggers</a>
-                <a class="dropdown-item" href="#">DWDD boek van de maand</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/actualiteit">Toon alle Actualiteit</a>
+            @foreach($subcategories6 as $subcategory6)
+                <a class="dropdown-item" href="#">{{ $subcategory6->name }}</a>
+           @endforeach
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Show all in @foreach($categories6 as $category6)
+            {{ $category6->name }}
+            @endforeach</a>
             </div>
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Engelse Boeken
+            @if (count($categories7) > 0)
+                @foreach($categories7 as $category7)
+                {{ $category7->name }}
+                @endforeach
+            @else
+                Engelse boeken
+            @endif
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Thrillers & Spanning</a>
-                <a class="dropdown-item" href="#">Literatuur</a>
-                <a class="dropdown-item" href="#">Young Adult</a>
-                <a class="dropdown-item" href="#">Non Fictie</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/engels">Toon alle Engelse boeken</a>
+            @foreach($subcategories7 as $subcategory7)
+                <a class="dropdown-item" href="#">{{ $subcategory7->name }}</a>
+           @endforeach
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Show all in @foreach($categories7 as $category7)
+            {{ $category7->name }}
+            @endforeach</a>
             </div>
         </li>
         <li class="nav-item">
