@@ -7,6 +7,27 @@
   @include ('partials._carousel')
   <br>
   <br>
+
+
+  {{--  @foreach ($product->chunk(4) as $items)
+  <div class="row">
+      @foreach ($items as $product)
+          <div class="col-md-3">
+              <div class="thumbnail">
+                  <div class="caption text-center">
+                      {{--  <a href="{{ url('shop', [$product->slug]) }}"><img src="{{ asset('img/' . $product->image) }}" alt="product" class="img-responsive"></a>
+                      <a href="{{ url('shop', [$product->slug]) }}"><h3>{{ $product->name }}</h3>  --}}
+                      {{--  <p>{{ $product->price }}</p>
+                      </a>
+                  </div> <!-- end caption -->
+              </div> <!-- end thumbnail -->
+          </div> <!-- end col-md-3 -->
+      @endforeach
+  </div> <!-- end row -->
+@endforeach  --}}
+
+
+
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -76,7 +97,7 @@
           <a href="#" class="btn btn-primary">Winkelmand</a>
         </div>
       </div>
-    </div>  
+    </div>
     <div class="col">
       <div class="card" style="width: 12rem;">
         <img class="card-img-top" src="images/jochem_meyer.jpg" alt="Card image cap">
@@ -87,7 +108,7 @@
         </div>
       </div>
     </div>
-    
+
   </div>
 <br>
 <!-- Six equal columns -->
@@ -133,7 +154,7 @@
           <a href="#" class="btn btn-primary">Winkelmand</a>
         </div>
       </div>
-    </div>  
+    </div>
     <div class="col">
       <div class="card" style="width: 12rem;">
         <img class="card-img-top" src="images/michelle_obama.jpg" alt="Card image cap">
@@ -144,7 +165,7 @@
         </div>
       </div>
     </div>
-    
+
   </div>
 <br>
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -216,7 +237,7 @@
           <a href="#" class="btn btn-primary">Winkelmand</a>
         </div>
       </div>
-    </div>  
+    </div>
     <div class="col">
       <div class="card" style="width: 12rem;">
         <img class="card-img-top" src="images/paulien_cornelissen.jpg" alt="Card image cap">
@@ -227,7 +248,7 @@
         </div>
       </div>
     </div>
-    
+
   </div>
 <br>
 
@@ -238,9 +259,9 @@
           <div class="thumbnail center well well-small text-center">
               <span class="border border-primary"></span>
                   <h2>Nieuwsbrief</h2>
-                  
+
                   <p>Schrijf je nu in voor onze nieuwsbrief en blijf op de hoogte van alle aanbiedingen</p>
-                  
+
                   <form action="" method="post">
                       <div class="input-prepend"><span class="add-on"><i class="icon-envelope"></i></span>
                           <input type="text" id="" name="" placeholder="emailadres">
@@ -248,7 +269,7 @@
                       <br />
                       <input type="submit" value="Schrijf je nu in" class="btn btn-large" />
                   </form>
-              </div>    
+              </div>
           </div>
     </div>
   </div>

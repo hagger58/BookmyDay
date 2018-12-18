@@ -19,11 +19,11 @@ Route::get('about', 'PageController@getAbout');
 Route::get('contact', 'PageController@getContact');
 Route::post('contact', 'PageController@postContact');
 
-Route::resource('products', 'ProductController');
+Route::resource('shop', 'ShopController');
 
 // Route::resource('reviews', 'ReviewController');
 
-Route::post('reviews/{product_id}', ['uses' => 'ReviewController@store', 'as' => 'reviews.store']);
+Route::post('reviews/{shop_id}', ['uses' => 'ReviewController@store', 'as' => 'reviews.store']);
 Route::get('reviews/{id}/edit', ['uses' => 'ReviewController@edit', 'as' => 'reviews.edit']);
 Route::put('reviews/{id}', ['uses' => 'ReviewController@update', 'as' => 'reviews.update']);
 Route::delete('reviews/{id}', ['uses' => 'ReviewController@destroy', 'as' => 'reviews.destroy']);
@@ -33,8 +33,8 @@ Route::get('book', 'BookController@getIndex');
 
 Route::get('book/{id}', ['as' => 'book.single', 'uses' => 'BookController@getSingle']);
 
-Route::get('/product', function () {
-    return view('pages.product');
+Route::get('/shop', function () {
+    return view('pages.shop');
 });
 
 Route::get('/checkout', function () {
@@ -89,8 +89,16 @@ Route::get('/cart', function () {
 });
 
 Route::get('/add-to-cart/{id}', [
-'uses' => 'ProductController@getAddToCart',
-'as' => 'product.addToCart']
+'uses' => 'ShopController@getAddToCart',
+'as' => 'shop.addToCart']
 );
+
+Route::resource('shop', 'ShopController', ['only' => ['index', 'show']]);
+Route::resource('cart', 'CartController');
+Route::delete('emptyCart', 'CartController@emptyCart');
+Route::post('switchToWishlist/{id}', 'CartController@switchToWishlist');
+Route::resource('wishlist', 'WishlistController');
+Route::delete('emptyWishlist', 'WishlistController@emptyWishlist');
+Route::post('switchToCart/{id}', 'WishlistController@switchToCart');
 
 Auth::routes();

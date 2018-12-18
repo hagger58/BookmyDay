@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use view;
+use App\Http\Requests;
 use App\Product;
 use Session;
 use App\Category;
@@ -69,7 +70,7 @@ class ProductController extends Controller
             'featured_image' => 'sometimes|image|max:10240'
         ));
         //store in the database
-        
+
         $product = new Product;
 
         $product->title = $request->title;
@@ -77,7 +78,7 @@ class ProductController extends Controller
         $product->category_id = $request->category_id;
         $product->subcategory_id = $request->subcategory_id;
         $product->abstract = $request->abstract;
-        
+
         //save our image
         if ($request->hasFile('featured_image')) {
             $image = $request->file('featured_image');
@@ -129,7 +130,7 @@ class ProductController extends Controller
         foreach ($subcategories as $subcategory) {
             $subcats[$subcategory->id] = $subcategory->name;
         }
-        
+
         $genres = Genre::all();
         $genres2 = array();
         foreach ($genres as $genre) {
@@ -141,7 +142,7 @@ class ProductController extends Controller
         foreach ($authors as $author) {
             $authors2[$author->id] = $author->name;
         }
-        
+
         $booktypes = Booktype::all();
         $booktypes2 = array();
         foreach ($booktypes as $booktype) {
@@ -162,7 +163,7 @@ class ProductController extends Controller
     {
         // Validate the data
         $product = Product::find($id);
-        
+
         $this->validate($request, array(
             'title' => 'required|max:255',
             'ISBN' => "required|max:20|min:10|unique:products,ISBN,$id",
@@ -171,7 +172,7 @@ class ProductController extends Controller
             'abstract' => 'required|min:20',
             'featured_image' => 'image'
         ));
-        
+
         // Save the data to the database
         $product = Product::find($id);
 
@@ -182,14 +183,14 @@ class ProductController extends Controller
         $product->abstract = $request->input('abstract');
 
         if($request->hasFile('featured_image')) {
-            
+
             //add the new photo
             $image = $request->file('featured_image');
             $filename = time() . '.' . $image->getClientOriginalExtension();
             $location = public_path('images/' . $filename);
             image::make($image)->resize(800, 400)->save($location);
             $oldFilename = $product->image;
-                        
+
             //update the database
             $product->image = $filename;
             //delete the old photo
@@ -218,7 +219,7 @@ class ProductController extends Controller
             else {
                 $product->booktypes()->sync(array());
             }
-    
+
         Session::flash('success', 'The product was successfully updated.');
         //Redirect to products.show
         return redirect()->route('products.show', $product->id);

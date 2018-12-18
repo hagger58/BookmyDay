@@ -15,6 +15,7 @@ use Notification;
 
 use App\Sub_Category;
 use App\Category;
+use Storage;
 
 class PageController extends Controller
 {
@@ -31,6 +32,14 @@ class PageController extends Controller
     public function getContact()
     {
         return view('pages.contact');
+    }
+    public function getCart()
+    {
+        return view('pages.cart');
+    }
+    public function getShop()
+    {
+        return view('pages.shop');
     }
 
     public function postContact(Request $request)
@@ -55,10 +64,11 @@ class PageController extends Controller
         $message->subject($data['subject']);
     });
 
-    // Session::first('succes', 'je email is verzonden');
 
-    // return redirect()->url('/');
+    Session::flash('success', 'your mail has been sent');
 
+        // return redirect()->route('pages.contact');
+        return view('pages.contact');
     }
 
 }
