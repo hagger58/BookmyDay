@@ -33,6 +33,13 @@ Route::get('book', 'BookController@getIndex');
 
 Route::get('book/{id}', ['as' => 'book.single', 'uses' => 'BookController@getSingle']);
 
+// Shopping cart
+Route::resource('cart', 'CartController');
+Route::get('add-to-cart/{id}', 'CartController@addToCart');
+Route::patch('update-cart', 'CartController@update');
+Route::delete('remove-from-cart', 'CartController@remove');
+
+
 Route::get('/product', function () {
     return view('pages.product');
 });
@@ -83,14 +90,5 @@ Route::get('/top100', function () {
     return view('categorieen.top100');
 });
 
-//winkelmandje controller
-// Route::get('/cart', function () {
-//     return  view('pages.Cart');
-// });
-
-// Route::get('/add-to-cart/{id}', [
-// 'uses' => 'ProductController@getAddToCart',
-// 'as' => 'product.addToCart']
-// );
 
 Auth::routes();

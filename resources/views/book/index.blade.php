@@ -17,7 +17,7 @@
             <br>
             <div class="col-md-4">
                 <a href="{{ route('book.single', $product->id) }}" class="btn btn-lg btn-block btn-primary">View Product</a>
-                <p>Price</p>
+                <p>€{{ $product->price }}</p>
             </div>
             <hr>
         @endforeach
