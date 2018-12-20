@@ -9786,3 +9786,12 @@ a.text-dark:focus {
     -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+
+.center-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    /* min-height: 100vh; */
+}
