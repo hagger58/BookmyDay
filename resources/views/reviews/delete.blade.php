@@ -22,6 +22,6 @@
 <hr>
 <a href="{{ url()->previous() }}" class="btn btn-default btn-block">Cancel</a>
     </div>
-    
+
 </div>
 @endsection

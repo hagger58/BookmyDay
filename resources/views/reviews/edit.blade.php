@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-8 col-md-offset-2"> 
+        <div class="col-md-8 col-md-offset-2">
         <h1>Edit Review</h1>
 
         {{ Form::model($review, ['route' => ['reviews.update', $review->id], 'method' => 'PUT']) }}
@@ -25,7 +25,7 @@
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
-                </select> 
+                </select>
 
             {{ Form::label('review', 'Review:') }}
             {{ Form::textarea('review', null, ['class' => 'form-control']) }}

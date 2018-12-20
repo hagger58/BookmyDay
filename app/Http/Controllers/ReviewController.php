@@ -122,13 +122,13 @@ class ReviewController extends Controller
 
         return redirect()->route('products.show', $review->product->id);
     }
-        
+
     public function delete($id)
     {
         $review = Review::find($id);
         return view('reviews.delete')->withReview($review);
     }
-    
+
 
     /**
      * Remove the specified resource from storage.

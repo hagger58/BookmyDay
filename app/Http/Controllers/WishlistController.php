@@ -20,7 +20,6 @@ class WishlistController extends Controller
     {
         return view('wishlist');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -54,7 +53,6 @@ class WishlistController extends Controller
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -66,7 +64,6 @@ class WishlistController extends Controller
         Cart::instance('wishlist')->remove($id);
         return redirect('wishlist')->withSuccessMessage('Item has been removed!');
     }
-
     /**
      * Remove the resource from storage.
      *
@@ -77,7 +74,6 @@ class WishlistController extends Controller
         Cart::instance('wishlist')->destroy();
         return redirect('wishlist')->withSuccessMessage('Your wishlist has been cleared!');
     }
-
     /**
      * Switch item from wishlist to shopping cart.
      *

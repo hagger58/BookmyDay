@@ -10,7 +10,6 @@ class Product extends Model
     {
         return $this->belongsToMany('App\Author');
     }
-
     public function booktypes()
     {
         return $this->belongsToMany('App\Booktype');

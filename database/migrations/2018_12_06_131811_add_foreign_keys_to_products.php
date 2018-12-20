@@ -26,6 +26,7 @@ class AddForeignKeysToProducts extends Migration
      */
     public function down()
     {
-        
+
+
     }
 }

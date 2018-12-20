@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Product;
+use App\Post;
 use Mail;
 use Session;
 use App\Mail\sendmail;
@@ -35,6 +36,7 @@ class PageController extends Controller
     {
         return view('pages.contact');
     }
+
 
     public function postContact(Request $request)
     {
