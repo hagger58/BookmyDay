@@ -1,5 +1,5 @@
 @extends('layouts.main')
 
 @section('content')
-<h1>Hier komen alle boeken in de categorie Engels</h1>
+<h1>Biografieen</h1>
 @endsection

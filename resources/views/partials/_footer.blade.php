@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
 
+<<<<<<< HEAD
 </nav>
 <div class="container">
     <section style="height:80px;"></section>
@@ -18,6 +19,27 @@
                                     <li><a href="#">Disclaimer</a></li>
                                     <li><a href="#">Sitemap</a></li>
                                 </ul>
+=======
+                </div>
+                <!----------- Footer ------------>
+                <footer class="footer-bs">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h2>Book My Day</h2>
+                            <p>De Online Boekenshop van Nederland</p>
+                                    <div id="ftrLinks" class="clearfix"> 
+                                             <ul>
+                                                <li><a href="{{ route('pages.about') }}"><i class="fa fa-play magenta">&nbsp;&nbsp;</i>About Us</a></li>
+                                                <li><a href="#"><i class="fa fa-play magenta">&nbsp;&nbsp;</i>Adress</a></li>
+                                                <li><a href="{{ route('pages.contact') }}"><i class="fa fa-play magenta">&nbsp;&nbsp;</i>Contact</a></li>
+                                                <li><a href="#"><i class="fa fa-play magenta">&nbsp;&nbsp;</i>Privacy Policy</a></li>
+                                                <li><a href="#"><i class="fa fa-play magenta">&nbsp;&nbsp;</i>Disclaimer</a></li>
+                                                <li><a href="#"><i class="fa fa-play magenta">&nbsp;&nbsp;</i>Sitemap</a></li>
+                                             </ul>
+                                            
+                                        </div>                    
+                                        <!-- Footer Links ENDS -->          
+>>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
                             </div>
                     </div>
                     <div class="col-md-3">

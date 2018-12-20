@@ -27,8 +27,13 @@
                     <option value="{{ $subcategory->id }}">{{ $subcategory->name }}</option>
                     @endforeach
                 </select>
+<<<<<<< HEAD
 
                 {{ Form::label('price', 'Price:', ['class' => 'form-spacing-top']) }}
+=======
+                
+                {{ Form::label('price', 'Price:', ['class' => 'form-spacing-top']) }}                
+>>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
                         <input id="price" type="number" class="form-control{{ $errors->has('price') ? ' is-invalid' : '' }}" name="price" value="{{ old('price') }}" required autofocus>
 
                                 @if ($errors->has('price'))
@@ -36,7 +41,11 @@
                                         <strong>{{ $errors->first('price') }}</strong>
                                     </span>
                                 @endif
+<<<<<<< HEAD
 
+=======
+                
+>>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
                 {{ Form::label('genres', 'Genre:') }}
                 <select class="form-control select2-multi" name="genres[]" multiple="multiple">
                     @foreach($genres as $genre)

@@ -25,7 +25,11 @@
                     <option value="3">3</option>
                     <option value="4">4</option>
                     <option value="5">5</option>
+<<<<<<< HEAD
                 </select>
+=======
+                </select> 
+>>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
 
             {{ Form::label('review', 'Review:') }}
             {{ Form::textarea('review', null, ['class' => 'form-control']) }}

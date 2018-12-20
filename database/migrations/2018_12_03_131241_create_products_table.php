@@ -16,7 +16,11 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
+<<<<<<< HEAD
             $table->string('slug')->unique();   //ingevoegd ivm shoppingcart
+=======
+            $table->string('slug')->nullable();
+>>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
             $table->string('ISBN');
             $table->string('image')->nullable();
             $table->text('abstract');

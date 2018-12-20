@@ -13,11 +13,19 @@
         <h5>Abstract</h5>
         <p class="lead">{{ $product->abstract  }}</p>
         <hr>
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
     </div>
     <div class="col-md-4">
         <div class="well">
-            <hr>
+            <hr>      
+            <dl class="dl-horizontal">
+                <label><strong>ISBN</strong></label><br>
+                    {{ $product->ISBN }}
+            </dl>
             <dl class="dl-horizontal">
                 <label><strong>ISBN</strong></label><br>
                     {{ $product->ISBN }}
@@ -81,7 +89,11 @@
 </div>
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
+<<<<<<< HEAD
     @foreach($product->review as $review)
+=======
+    @foreach($product->review as $review)        
+>>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
         <div class="review">
             <p><strong>Title: </strong>{{ $review->title }}</p>
             <p><strong>Name: </strong>{{ $review->name }}</p>
@@ -98,8 +110,16 @@
         <hr>
         <br>
         </div>
+<<<<<<< HEAD
     </div>
     @endforeach
 
 </div>
 @endsection
+=======
+    </div>   
+    @endforeach
+         
+</div>
+@endsection
+>>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
