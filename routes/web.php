@@ -56,15 +56,9 @@ Route::get('/checkout', function () {
     return view('pages.checkout');
 });
 
-<<<<<<< HEAD
 //categorieen
 Route::get('/fictie', function () {
     return view('categorieen.fictie');
-=======
-//categorieen 
-Route::get('/literatuur', function () {
-    return view('categorieen.literatuur');
->>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
 });
 
 Route::get('/hobby', function () {
@@ -169,7 +163,6 @@ Route::get('/top100', function () {
     return view('categorieen.top100');
 });
 
-<<<<<<< HEAD
 //winkelmandje controller
 // Route::get('/cart', function () {
 //     return  view('pages.Cart');
@@ -201,7 +194,5 @@ Route::post('switchToCart/{id}', 'WishlistController@switchToCart');
 //     return redirect('/shop');
 // });
 
-=======
->>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
 
 Auth::routes();

@@ -82,12 +82,9 @@ class ProductController extends Controller
         $product->category_id = $request->category_id;
         $product->subcategory_id = $request->subcategory_id;
         $product->abstract = $request->abstract;
-<<<<<<< HEAD
 
-=======
         $product->price = $request->price;
-        
->>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
+
         //save our image
         if ($request->hasFile('featured_image')) {
             $image = $request->file('featured_image');

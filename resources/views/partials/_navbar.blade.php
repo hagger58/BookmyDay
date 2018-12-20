@@ -16,10 +16,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
-<<<<<<< HEAD
 
-=======
->>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -39,10 +36,7 @@
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
-<<<<<<< HEAD
 
-=======
->>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
@@ -53,15 +47,11 @@
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>
-<<<<<<< HEAD
 
-=======
->>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
                             </div>
                         </li>
                     @endguest
                 </ul>
-<<<<<<< HEAD
 
             </div>
             <div class="float-right">
@@ -72,8 +62,7 @@
 
         </div>
     </nav>
-=======
-                
+
                 <div class="float-right">
                     @if(session('cart'))
                         <div class="container">
@@ -88,17 +77,17 @@
                                                 <div class="col-lg-6 col-sm-6 col-6">
                                                     <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="badge badge-pill badge-danger"> {{ count(session('cart')) }}</span>
                                                 </div>
-                        
+
                                                 <?php $total = 0 ?>
                                                 @foreach(session('cart') as $id => $details)
                                                     <?php $total += $details['price'] * $details['quantity'] ?>
                                                 @endforeach
-                        
+
                                                 <div class="col-lg-6 col-sm-6 col-6 total-section text-right">
                                                     <p>Total: <span class="text-info">€ {{ $total }}</span></p>
                                                 </div>
                                             </div>
-                        
+
                                             @if(session('cart'))
                                                 @foreach(session('cart') as $id => $details)
                                                     <div class="row cart-detail">
@@ -122,7 +111,7 @@
                                 </div>
                             </div>
                         </div>
-                        @else 
+                        @else
                             <form action="{{ url('cart') }}">
                                 <button type="submit" class="btn btn-info">
                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>  Cart  <span class="badge badge-pill badge-danger"> 0 </span>
@@ -136,7 +125,6 @@
 
 
 
->>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
 
 <div class="container">
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -161,19 +149,16 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             @foreach($subcategories1 as $subcategory1)
-<<<<<<< HEAD
                 <a class="dropdown-item" href="#">{{ $subcategory1->name }}</a>
             @endforeach
 
            <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Show all in @foreach($categories1 as $category1)
-=======
                 <a class="dropdown-item" href="/kinderboeken">{{ $subcategory1->name }}</a>
             @endforeach
 
            <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="/kinderboeken">Show all in @foreach($categories1 as $category1)
->>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
             {{ $category1->name }}
             @endforeach</a>
 
@@ -186,26 +171,19 @@
                 {{ $category2->name }}
                 @endforeach
             @else
-<<<<<<< HEAD
-                kookboeken
-=======
                 Literatuur
->>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
             @endif
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           @foreach($subcategories2 as $subcategory2)
-<<<<<<< HEAD
                 <a class="dropdown-item" href="#">{{ $subcategory2->name }}</a>
            @endforeach
            <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Show all in @foreach($categories2 as $category2)
-=======
                 <a class="dropdown-item" href="/literatuur">{{ $subcategory2->name }}</a>
            @endforeach
            <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="/literatuur">Show all in @foreach($categories2 as $category2)
->>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
             {{ $category2->name }}
             @endforeach</a>
           </div>
@@ -217,26 +195,19 @@
                 {{ $category3->name }}
                 @endforeach
             @else
-<<<<<<< HEAD
-                Sportboeken
-=======
                 Hobby
->>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
             @endif
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             @foreach($subcategories3 as $subcategory3)
-<<<<<<< HEAD
                 <a class="dropdown-item" href="#">{{ $subcategory3->name }}</a>
            @endforeach
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Show all in @foreach($categories3 as $category3)
-=======
                 <a class="dropdown-item" href="/hobby">{{ $subcategory3->name }}</a>
            @endforeach
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="/hobby">Show all in @foreach($categories3 as $category3)
->>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
             {{ $category3->name }}
             @endforeach</a>
             </div>
@@ -248,26 +219,19 @@
                 {{ $category4->name }}
                 @endforeach
             @else
-<<<<<<< HEAD
-                Fictie
-=======
                 Informatief
->>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
             @endif
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             @foreach($subcategories4 as $subcategory4)
-<<<<<<< HEAD
                 <a class="dropdown-item" href="#">{{ $subcategory4->name }}</a>
            @endforeach
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Show all in @foreach($categories4 as $category4)
-=======
                 <a class="dropdown-item" href="/informatief">{{ $subcategory4->name }}</a>
            @endforeach
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="/informatief">Show all in @foreach($categories4 as $category4)
->>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
             {{ $category4->name }}
             @endforeach</a>
             </div>
@@ -279,26 +243,19 @@
                 {{ $category5->name }}
                 @endforeach
             @else
-<<<<<<< HEAD
-                Ebooks
-=======
-                Actualiteit
->>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
+                Gezondheid
             @endif
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             @foreach($subcategories5 as $subcategory5)
-<<<<<<< HEAD
                 <a class="dropdown-item" href="#">{{ $subcategory5->name }}</a>
            @endforeach
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Show all in @foreach($categories5 as $category5)
-=======
                 <a class="dropdown-item" href="/actualiteit">{{ $subcategory5->name }}</a>
            @endforeach
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="/actualiteit">Show all in @foreach($categories5 as $category5)
->>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
             {{ $category5->name }}
             @endforeach</a>
             </div>
@@ -310,26 +267,19 @@
                 {{ $category6->name }}
                 @endforeach
             @else
-<<<<<<< HEAD
-                kookboeken
-=======
-                Engels
->>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
+                Religie
             @endif
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             @foreach($subcategories6 as $subcategory6)
-<<<<<<< HEAD
                 <a class="dropdown-item" href="#">{{ $subcategory6->name }}</a>
            @endforeach
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Show all in @foreach($categories6 as $category6)
-=======
                 <a class="dropdown-item" href="/engels">{{ $subcategory6->name }}</a>
            @endforeach
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="/engels">Show all in @foreach($categories6 as $category6)
->>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
             {{ $category6->name }}
             @endforeach</a>
             </div>
@@ -341,26 +291,19 @@
                 {{ $category7->name }}
                 @endforeach
             @else
-<<<<<<< HEAD
-                Engelse boeken
-=======
                 Stripboeken
->>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
             @endif
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             @foreach($subcategories7 as $subcategory7)
-<<<<<<< HEAD
                 <a class="dropdown-item" href="#">{{ $subcategory7->name }}</a>
            @endforeach
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Show all in @foreach($categories7 as $category7)
-=======
                 <a class="dropdown-item" href="/stripboeken">{{ $subcategory7->name }}</a>
            @endforeach
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="/stripboeken">Show all in @foreach($categories7 as $category7)
->>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
             {{ $category7->name }}
             @endforeach</a>
             </div>
@@ -374,9 +317,6 @@
       </ul>
     </div>
     </div>
-<<<<<<< HEAD
   </nav>
-=======
 </nav>
 </div>
->>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd

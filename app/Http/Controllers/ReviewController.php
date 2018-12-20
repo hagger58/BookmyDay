@@ -121,23 +121,20 @@ class ReviewController extends Controller
         Session::flash('success', 'review updated');
 
         return redirect()->route('products.show', $review->product->id);
-<<<<<<< HEAD
     }
 
     public function delete($id)
     {
         $review = Review::find($id);
         return view('reviews.delete')->withReview($review);
-=======
->>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
     }
-        
+
     public function delete($id)
     {
         $review = Review::find($id);
         return view('reviews.delete')->withReview($review);
     }
-    
+
 
 
     /**

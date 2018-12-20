@@ -12,15 +12,9 @@
             <div class="col-md-8">
                 <h2>{{ $product->title }}</h2>
                 <br>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
                 <img src="{{ asset('images/' . $product->image) }}" height="480" width="300" alt="Image not working."/>
-=======
-                <img src="{{ asset('images/' . $product->image) }}" height="400" width="100%" alt="Image not working."/>
->>>>>>> 556e375ea2b3df437f34bddcfcc4d99abf1e896e
-=======
-                <img src="{{ asset('images/' . $product->image) }}" height="480" width="300" alt="Image not working."/>
->>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
+
             </div>
             <br>
             <div class="col-md-4">
@@ -33,6 +27,6 @@
 </div>
 
 
-    
+
 
 @endsection

@@ -5,10 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Product;
-<<<<<<< HEAD
 use App\Post;
-=======
->>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
 use Mail;
 use Session;
 use App\Mail\sendmail;
@@ -33,7 +30,7 @@ class PageController extends Controller
 
     public function getAbout()
     {
-        return view('pages.about');        
+        return view('pages.about');
     }
     public function getContact()
     {
@@ -63,18 +60,11 @@ class PageController extends Controller
         $message->subject($data['subject']);
     });
 
-<<<<<<< HEAD
     Session::flash('success', 'your mail has been sent');
-=======
-    // Session::first('succes', 'je email is verzonden');
 
-    // return redirect()->url('/');
->>>>>>> 073d9a6395cfdb7a32d6e83e5432707bdc4e3ffd
-
-        // return redirect()->route('pages.contact');
         return view('pages.contact');
     }
-    public function getStripboeken() 
+    public function getStripboeken()
     {
     $images = Product::orderby('id', 'desc')->where('subcategory_id', '=', '7')->take(5)->get();
 
