@@ -1,5 +1,8 @@
 @extends('layouts.main')
 
 @section('content')
-<h1>Hier komen alle boeken in de categorie Kinderboeken</h1>
+<h1>Kinderboeken</h1>
+<a href="/kinderboeken/prentenboeken">Prentenboeken</a><br>
+<a href="/kinderboeken/kleurboeken">Kleurboeken</a><br>
+<a href="/kinderboeken/verhalenensprookjes">Verhalen & Sprookjes</a>
 @endsection

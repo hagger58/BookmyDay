@@ -1,5 +1,5 @@
 @extends('layouts.main')
 
 @section('content')
-<h1>test voor navbar</h1>
+<h1>Biografieen</h1>
 @endsection

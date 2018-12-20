@@ -63,5 +63,11 @@ class PageController extends Controller
     // return redirect()->url('/');
 
     }
+    public function getStripboeken() 
+    {
+    $images = Product::orderby('id', 'desc')->where('subcategory_id', '=', '7')->take(5)->get();
+
+    return view('categorieen.stripboeken')->withImages($images);
+    }
 
 }
